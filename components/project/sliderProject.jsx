@@ -22,13 +22,11 @@ const cardData = [
 ];
 
 const Slider = ({ timeline, ease }) => {
-  // Refs for the slides
   const covers = useRef([]);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
     if (timeline && !hasAnimated) {
-      // Create GSAP timeline if not already created
       const tl = gsap.timeline();
 
       tl.fromTo(covers.current[0], { x: -1200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease })
@@ -40,20 +38,19 @@ const Slider = ({ timeline, ease }) => {
         .fromTo(covers.current[3], { x: 1200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease })
         .fromTo(covers.current[3], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=0.8");
 
-      tl.eventCallback('onComplete', () => setHasAnimated(true)); // Mark as animated when complete
+      tl.eventCallback('onComplete', () => setHasAnimated(true));
     }
   }, [timeline, ease, hasAnimated]);
 
-  // Intersection Observer to trigger animation on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
-          gsap.to(covers.current, { autoAlpha: 1 }); // Ensure elements are visible before animation
+          gsap.to(covers.current, { autoAlpha: 1 });
           timeline.play();
         }
       },
-      { threshold: 0.5 } // Trigger animation when 50% of the component is in view
+      { threshold: 0.5 }
     );
 
     const sliderElement = document.querySelector(`.${styles.slider}`);
