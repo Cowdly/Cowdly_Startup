@@ -1,0 +1,33 @@
+ 
+
+.images .box1 {
+    position: absolute;
+    top: 30vh;
+    right: 50px;
+        background: url(../../app/images/Mask\ group.svg) no-repeat 50% 50%;
+    background-size: cover;
+    width: 300px;
+    border: .5px solid gray;
+    height: 300px;
+}
+
+.images .box2 {
+    position: absolute;
+    top: 40vh;
+    right: 360px;
+    background: url(../../app/images/Mask\ group\ \(2\).svg) no-repeat 50% 50%;
+    background-size: cover;
+    width: 350px;
+    border: .5px solid gray;
+    height: 350px;
+}
+
+.images .box3 {
+    position: absolute;
+    top: 73vh;
+    right: 50px;
+    background: url(../../app/images/Mask\ group\ \(1\).svg) no-repeat 50% 50%;    background-size: cover;
+    width: 300px;
+    border: .5px solid gray;
+    height: 150px;
+}

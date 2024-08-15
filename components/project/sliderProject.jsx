@@ -1,16 +1,17 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import styles from './project.module.css';
-import cover1 from '../../app/images/download.jpeg';
+import Image from 'next/image';
+import { ArrowRight } from '@phosphor-icons/react';
+
+ import cover1 from '../../app/images/download.jpeg';
 import cover2 from '../../app/images/download2.jpeg';
 import cover3 from '../../app/images/images (1).jpeg';
 import cover4 from '../../app/images/images (2).jpeg';
-import Image from 'next/image';
-import { ArrowRight } from '@phosphor-icons/react';
 
 const cardData = [
   { id: 1, src: cover1, alt: 'Cover 1', text: 'VR training App for a manufacturing company' },
@@ -25,7 +26,7 @@ const Slider = ({ timeline, ease }) => {
   const covers = useRef([]);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  useEffect(() => {
+  const animateSlides = useCallback(() => {
     if (timeline && !hasAnimated) {
       const tl = gsap.timeline();
 
@@ -47,7 +48,7 @@ const Slider = ({ timeline, ease }) => {
       (entries) => {
         if (entries[0].isIntersecting && !hasAnimated) {
           gsap.to(covers.current, { autoAlpha: 1 });
-          timeline.play();
+          animateSlides();
         }
       },
       { threshold: 0.5 }
@@ -63,13 +64,13 @@ const Slider = ({ timeline, ease }) => {
         observer.unobserve(sliderElement);
       }
     };
-  }, [timeline, hasAnimated]);
+  }, [animateSlides, hasAnimated]);
 
   return (
     <div className={styles.slider}>
       <Swiper
         slidesPerView={4}
-        spaceBetween={30}
+        spaceBetween={10}
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         modules={[Pagination, Autoplay]}
@@ -87,7 +88,7 @@ const Slider = ({ timeline, ease }) => {
                 alt={card.alt}
                 width={500}
                 height={500}
-                loading='lazy'
+                 priority={index < 2}
               />
               <div className={styles.overlay}>
                 <p className={styles.text}>

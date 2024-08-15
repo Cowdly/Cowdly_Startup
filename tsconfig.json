@@ -21,6 +21,14 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "components/project/sliderProject.jsx",
+    "components/project/project.jsx",
+    "components/institution/Institution.jsx"
+  ],
   "exclude": ["node_modules"]
 }
