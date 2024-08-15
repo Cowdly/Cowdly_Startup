@@ -1,10 +1,18 @@
 import "./globals.css";
-import { Tajawal } from "next/font/google";
-
+import { Tajawal, Orbitron } from "next/font/google";
 import Navbar from "../components/Navbar";
 import Footer from "@/components/Footer";
 
-const tajawal = Tajawal({ weight: "400", subsets: ["latin"] });
+const tajawal = Tajawal({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-tajawal",
+});
+const orbitron = Orbitron({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-orbitron",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -18,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={tajawal.className}>
+      <body className={`${tajawal.variable} ${orbitron.variable}`}>
         <Navbar />
         {children}
         <Footer />

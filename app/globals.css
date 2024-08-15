@@ -27,3 +27,11 @@ body {
     text-wrap: balance;
   }
 }
+
+.tajawal {
+  font-family: var(--font-tajawal);
+}
+
+.orbitron {
+  font-family: var(--font-orbitron);
+}
