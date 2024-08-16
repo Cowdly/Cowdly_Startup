@@ -49,3 +49,10 @@ body {
 .rectangle {
   background: url(../app/images/Rectangle\ 21832-1.svg) no-repeat 50% 50%;
 }
+.card:hover .text {
+  transform: translateY(0);
+}
+.slider {
+  width: 100%;
+  position: relative;
+}
