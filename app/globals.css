@@ -27,3 +27,25 @@ body {
     text-wrap: balance;
   }
 }
+
+.box1 {
+  background: url(./images/Mask\ group.svg) no-repeat 50% 50%;
+}
+
+.box2 {
+  background: url(./images/Mask\ group\ \(2\).svg) no-repeat 50% 50%;
+}
+
+.box3 {
+  background: url(./images/Mask\ group\ \(1\).svg) no-repeat 50% 50%;
+  background-size: cover;
+
+}
+
+.group {
+  background: url(../app/images/Group\ 143725869.svg) no-repeat 50% 50%;
+}
+
+.rectangle {
+  background: url(../app/images/Rectangle\ 21832-1.svg) no-repeat 50% 50%;
+}

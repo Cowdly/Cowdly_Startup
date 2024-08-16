@@ -8,7 +8,7 @@ import styles from './project.module.css';
 import Image from 'next/image';
 import { ArrowRight } from '@phosphor-icons/react';
 
- import cover1 from '../../app/images/download.jpeg';
+import cover1 from '../../app/images/download.jpeg';
 import cover2 from '../../app/images/download2.jpeg';
 import cover3 from '../../app/images/images (1).jpeg';
 import cover4 from '../../app/images/images (2).jpeg';
@@ -88,7 +88,7 @@ const Slider = ({ timeline, ease }) => {
                 alt={card.alt}
                 width={500}
                 height={500}
-                 priority={index < 2}
+                priority={index < 2}
               />
               <div className={styles.overlay}>
                 <p className={styles.text}>

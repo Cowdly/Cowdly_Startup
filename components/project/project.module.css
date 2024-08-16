@@ -42,7 +42,7 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
     width: 100%;
     height: 40vh;
- }
+}
 
 .card {
     position: relative;
@@ -93,7 +93,7 @@
 }
 
 .imageContainer {
-    width:25vw;
+    width: 25vw;
     height: 100%;
     border-radius: 20px;
 }
