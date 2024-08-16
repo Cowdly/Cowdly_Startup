@@ -4,6 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
+import styles from './project.module.css';
 import Image from 'next/image';
 import { ArrowRight } from '@phosphor-icons/react';
 
@@ -53,7 +54,7 @@ const Slider = ({ timeline, ease }) => {
       { threshold: 0.5 }
     );
 
-    const sliderElement = document.querySelector('.w-full');
+    const sliderElement = document.querySelector(`.${styles.slider}`);
     if (sliderElement) {
       observer.observe(sliderElement);
     }
@@ -66,31 +67,31 @@ const Slider = ({ timeline, ease }) => {
   }, [animateSlides, hasAnimated]);
 
   return (
-    <div className="w-full relative">
+    <div className={styles.slider}>
       <Swiper
         slidesPerView={4}
-        spaceBetween={2.5}
+        spaceBetween={10}
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         modules={[Pagination, Autoplay]}
-        className="w-full h-[44vh] grid grid-cols-4 gap-2.5"
+        className={styles.swiper}
       >
         {cardData.map((card, index) => (
-          <SwiperSlide key={card.id} className="relative overflow-hidden w-full text-center text-lg bg-white p-0 flex justify-center items-center">
+          <SwiperSlide key={card.id} className={styles.card}>
             <div
               ref={(el) => (covers.current[index] = el)}
-              className="w-[25vw] h-full rounded-lg relative"
+              className={styles.imageContainer}
             >
               <Image
-                className="transition-transform duration-300 ease-in-out w-full h-[40vh] rounded-3"
+                className={`rounded-3 ${styles.image}`}
                 src={card.src}
                 alt={card.alt}
                 width={500}
                 height={500}
                 priority={index < 2}
               />
-              <div className="absolute inset-0 mb-2.5 bg-black bg-opacity-50 flex flex-col items-center justify-center rounded-lg transition-opacity duration-300 opacity-0">
-                <p className="absolute bottom-0 h-1/2 bg-black bg-opacity-87 text-white text-xl px-12 py-2.5 w-full transform translate-y-full transition-transform duration-300">
+              <div className={styles.overlay}>
+                <p className={styles.text}>
                   {card.text}
                   <ArrowRight className="bg-[#011b3d] rounded-full my-5" size={40} weight="bold" />
                 </p>
