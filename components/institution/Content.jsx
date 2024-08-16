@@ -1,12 +1,9 @@
-import { gsap, Power3 } from 'gsap';
-import React from 'react';
-import Institution from './Institution';
+ import Institution from './Institution';
 import Images from './Images';
-import styles from "./content.module.css"
-function Content() {
+ function Content() {
  
     return (
-        <div className={styles.container}>
+        <div className="flex items-center justify-between w-screen overflow-hidden h-screen flex-row">
             <Institution  />
             <Images   />
         </div>

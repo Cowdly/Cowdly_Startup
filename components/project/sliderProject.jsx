@@ -4,11 +4,10 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
-import styles from './project.module.css';
 import Image from 'next/image';
 import { ArrowRight } from '@phosphor-icons/react';
 
- import cover1 from '../../app/images/download.jpeg';
+import cover1 from '../../app/images/download.jpeg';
 import cover2 from '../../app/images/download2.jpeg';
 import cover3 from '../../app/images/images (1).jpeg';
 import cover4 from '../../app/images/images (2).jpeg';
@@ -54,7 +53,7 @@ const Slider = ({ timeline, ease }) => {
       { threshold: 0.5 }
     );
 
-    const sliderElement = document.querySelector(`.${styles.slider}`);
+    const sliderElement = document.querySelector('.w-full');
     if (sliderElement) {
       observer.observe(sliderElement);
     }
@@ -67,31 +66,31 @@ const Slider = ({ timeline, ease }) => {
   }, [animateSlides, hasAnimated]);
 
   return (
-    <div className={styles.slider}>
+    <div className="w-full relative">
       <Swiper
         slidesPerView={4}
-        spaceBetween={10}
+        spaceBetween={2.5}
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         modules={[Pagination, Autoplay]}
-        className={styles.swiper}
+        className="w-full h-[44vh] grid grid-cols-4 gap-2.5"
       >
         {cardData.map((card, index) => (
-          <SwiperSlide key={card.id} className={styles.card}>
+          <SwiperSlide key={card.id} className="relative overflow-hidden w-full text-center text-lg bg-white p-0 flex justify-center items-center">
             <div
               ref={(el) => (covers.current[index] = el)}
-              className={styles.imageContainer}
+              className="w-[25vw] h-full rounded-lg relative"
             >
               <Image
-                className={`rounded-3 ${styles.image}`}
+                className="transition-transform duration-300 ease-in-out w-full h-[40vh] rounded-3"
                 src={card.src}
                 alt={card.alt}
                 width={500}
                 height={500}
-                 priority={index < 2}
+                priority={index < 2}
               />
-              <div className={styles.overlay}>
-                <p className={styles.text}>
+              <div className="absolute inset-0 mb-2.5 bg-black bg-opacity-50 flex flex-col items-center justify-center rounded-lg transition-opacity duration-300 opacity-0">
+                <p className="absolute bottom-0 h-1/2 bg-black bg-opacity-87 text-white text-xl px-12 py-2.5 w-full transform translate-y-full transition-transform duration-300">
                   {card.text}
                   <ArrowRight className="bg-[#011b3d] rounded-full my-5" size={40} weight="bold" />
                 </p>
