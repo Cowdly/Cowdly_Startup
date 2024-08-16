@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
-import styles from './project.module.css';
 import Image from 'next/image';
 import { ArrowRight } from '@phosphor-icons/react';
 
@@ -28,7 +28,17 @@ const Slider = ({ timeline, ease }) => {
 
   const animateSlides = useCallback(() => {
     if (timeline && !hasAnimated) {
-      const tl = gsap.timeline();
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: 'w-full relative',
+          start: 'top center',
+          end: 'bottom center',
+          middle: 'bottom center',
+           scrub: true,
+          onEnter: () => tl.play(),
+          onLeaveBack: () => tl.reverse()
+        }
+      });
 
       tl.fromTo(covers.current[0], { x: -1200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease })
         .fromTo(covers.current[0], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=0.8")
@@ -44,54 +54,36 @@ const Slider = ({ timeline, ease }) => {
   }, [timeline, ease, hasAnimated]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !hasAnimated) {
-          gsap.to(covers.current, { autoAlpha: 1 });
-          animateSlides();
-        }
-      },
-      { threshold: 0.5 }
-    );
+    gsap.registerPlugin(ScrollTrigger);
 
-    const sliderElement = document.querySelector(`.${styles.slider}`);
-    if (sliderElement) {
-      observer.observe(sliderElement);
-    }
-
-    return () => {
-      if (sliderElement) {
-        observer.unobserve(sliderElement);
-      }
-    };
-  }, [animateSlides, hasAnimated]);
+    animateSlides();
+  }, [animateSlides]);
 
   return (
-    <div className={styles.slider}>
+    <div className="w-full relative">
       <Swiper
         slidesPerView={4}
         spaceBetween={10}
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         modules={[Pagination, Autoplay]}
-        className={styles.swiper}
+        className='w-full h-[44vh] grid grid-cols-4 gap-2'
       >
         {cardData.map((card, index) => (
-          <SwiperSlide key={card.id} className={styles.card}>
+          <SwiperSlide key={card.id} className="text-center text-xl bg-white p-0 flex justify-center items-center">
             <div
               ref={(el) => (covers.current[index] = el)}
-              className={styles.imageContainer}
+              className="relative overflow-hidden w-full group"
             >
               <Image
-                className={`rounded-3 ${styles.image}`}
+                className="rounded-3 transition-transform duration-300 ease-in-out w-full h-[40vh]"
                 src={card.src}
                 alt={card.alt}
                 width={500}
                 height={500}
-                priority={index < 2}
-              />
-              <div className={styles.overlay}>
-                <p className={styles.text}>
+                loading='lazy' />
+              <div className="absolute inset-0 bottom-0 bg-black bg-opacity-50 flex flex-col rounded-2xl items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
+                <p className="absolute bottom-0 h-1/2 bg-black bg-opacity-87 text-white text-xl px-12 py-2.5 w-full translate-y-full transition-transform duration-300 transform group-hover:translate-y-0">
                   {card.text}
                   <ArrowRight className="bg-[#011b3d] rounded-full my-5" size={40} weight="bold" />
                 </p>
