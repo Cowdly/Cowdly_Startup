@@ -29,6 +29,6 @@
     "components/project/sliderProject.jsx",
     "components/project/project.jsx",
     "components/institution/Institution.jsx"
-  ],
+, "components/team/teamSlider.tsx"  ],
   "exclude": ["node_modules"]
 }

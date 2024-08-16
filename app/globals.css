@@ -45,6 +45,10 @@ body {
 .group {
   background: url(../app/images/Group\ 143725869.svg) no-repeat 50% 50%;
 }
+.backgroundImage {
+  background: url(../app/images/Group\ 1000005860.svg) no-repeat 50% 50%;
+}
+ 
 
 .rectangle {
   background: url(../app/images/Rectangle\ 21832-1.svg) no-repeat 50% 50%;

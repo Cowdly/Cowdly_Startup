@@ -23,31 +23,37 @@ const cardData = [
 ];
 
 const Slider = ({ timeline, ease }) => {
-  const covers = useRef([]);
+  const coverRefs = useRef([]);
   const [hasAnimated, setHasAnimated] = useState(false);
 
   const animateSlides = useCallback(() => {
     if (timeline && !hasAnimated) {
+      const covers = coverRefs.current;
+
+      if (covers.length < 4) {
+        console.error('Not all refs are set');
+        return;
+      }
+
       const tl = gsap.timeline({
         scrollTrigger: {
-          trigger: 'w-full relative',
+          trigger: '.swiper-container',  
           start: 'top center',
           end: 'bottom center',
-          middle: 'bottom center',
-           scrub: true,
+          scrub: true,
           onEnter: () => tl.play(),
           onLeaveBack: () => tl.reverse()
         }
       });
 
-      tl.fromTo(covers.current[0], { x: -1200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease })
-        .fromTo(covers.current[0], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=0.8")
-        .fromTo(covers.current[1], { y: 1200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease })
-        .fromTo(covers.current[1], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=0.8")
-        .fromTo(covers.current[2], { y: 1200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease })
-        .fromTo(covers.current[2], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=0.8")
-        .fromTo(covers.current[3], { x: 1200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease })
-        .fromTo(covers.current[3], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=0.8");
+      tl.fromTo(covers[0], { x: -1200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease })
+        .fromTo(covers[0], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=.8")
+        .fromTo(covers[1], { y: 1200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease })
+        .fromTo(covers[1], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=0.8")
+        .fromTo(covers[2], { y: 1200, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, ease })
+        .fromTo(covers[2], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=0.8")
+        .fromTo(covers[3], { x: 1200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.8, ease })
+        .fromTo(covers[3], { scale: 1.6 }, { scale: 1, duration: 1.2, ease }, "-=0.8");
 
       tl.eventCallback('onComplete', () => setHasAnimated(true));
     }
@@ -55,12 +61,11 @@ const Slider = ({ timeline, ease }) => {
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
-
     animateSlides();
   }, [animateSlides]);
 
   return (
-    <div className="w-full relative">
+    <div className="swiper-container w-full relative">
       <Swiper
         slidesPerView={4}
         spaceBetween={10}
@@ -72,7 +77,7 @@ const Slider = ({ timeline, ease }) => {
         {cardData.map((card, index) => (
           <SwiperSlide key={card.id} className="text-center text-xl bg-white p-0 flex justify-center items-center">
             <div
-              ref={(el) => (covers.current[index] = el)}
+              ref={(el) => coverRefs.current[index] = el}
               className="relative overflow-hidden w-full group"
             >
               <Image
