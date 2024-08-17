@@ -8,11 +8,11 @@ const Footer = () => {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
               <img src="#" className="mr-5 h-6 sm:h-9" alt="logo" />
-              <p className="max-w-xs mt-4 text-sm text-gray-600">
+              <p className="max-w-xs mt-4 text-sm text-black">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Voluptas, accusantium.
               </p>
-              <div className="flex mt-8 space-x-6 text-gray-600">
+              <div className="flex mt-8 space-x-6 text-black">
                 <a
                   className="hover:opacity-75"
                   href="#"
@@ -104,7 +104,7 @@ const Footer = () => {
             <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
               <div>
                 <p className="font-medium">Company</p>
-                <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                <nav className="flex flex-col mt-4 space-y-2 text-sm text-black fw-boldest">
                   <a className="hover:opacity-75" href="#">
                     {" "}
                     About{" "}
@@ -125,7 +125,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-medium">Services</p>
-                <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                <nav className="flex flex-col mt-4 space-y-2 text-sm text-black fw-boldest">
                   <a className="hover:opacity-75" href="#">
                     {" "}
                     1on1 Coaching{" "}
@@ -150,7 +150,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-medium">Helpful Links</p>
-                <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                <nav className="flex flex-col mt-4 space-y-2 text-sm text-black">
                   <a className="hover:opacity-75" href="#">
                     {" "}
                     Contact{" "}
@@ -167,7 +167,7 @@ const Footer = () => {
               </div>
               <div>
                 <p className="font-medium">Legal</p>
-                <nav className="flex flex-col mt-4 space-y-2 text-sm text-gray-500">
+                <nav className="flex flex-col mt-4 space-y-2 text-sm text-black">
                   <a className="hover:opacity-75" href="#">
                     {" "}
                     Privacy Policy{" "}

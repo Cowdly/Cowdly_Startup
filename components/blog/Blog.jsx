@@ -13,7 +13,7 @@ const Blog = () => {
 
     return (
         <div
-            className="relative p-5 bg-[#f5f5f5b3] mx-auto"
+            className="relative z-30 p-5 bg-[#f5f5f5b3] mx-auto"
             id="blog"
         >
             <h1 className="header p-3 mb-3 text-4xl font-bold text-blue-500 text-end">
