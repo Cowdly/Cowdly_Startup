@@ -14,7 +14,7 @@ const Team = () => {
 
   return (
     <div
-      className="relative   h-[90vh] p-5 bg-[#f5f5f5b3] mx-auto"
+      className="relative   h-[70vh] p-5 bg-[#f5f5f5b3] mx-auto"
       id="projects"
     >
       <h1 className="header p-3 mb-3 text-4xl font-bold text-blue-500 relative text-end">

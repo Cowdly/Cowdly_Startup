@@ -1,9 +1,9 @@
+import Footer from "../components/footer/Footer";
+import Navbar from "../components/header/Navbar";
 import "./globals.css";
 import { Tajawal } from "next/font/google";
 
-import Navbar from "../components/Navbar";
-import Footer from "@/components/Footer";
-
+ 
 const tajawal = Tajawal({ weight: "400", subsets: ["latin"] });
 
 export const metadata = {
@@ -13,9 +13,7 @@ export const metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+} ) {
   return (
     <html lang="en">
       <body className={tajawal.className}>
