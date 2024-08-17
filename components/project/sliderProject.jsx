@@ -64,23 +64,23 @@ const Slider = ({ timeline, ease }) => {
   }, [animateSlides]);
 
   return (
-    <div className="swiper-container w-full relative">
+    <div className="swiper-container w-full   relative">
       <Swiper
         slidesPerView={4}
         spaceBetween={10}
         pagination={{ clickable: true }}
         autoplay={{ delay: 5000, disableOnInteraction: false }}
         modules={[Pagination, Autoplay]}
-        className='w-full h-[44vh] grid grid-cols-4 gap-2'
+        className='w-full h-[44vh]  grid grid-cols-4 gap-2'
       >
         {cardData.map((card, index) => (
-          <SwiperSlide key={card.id} className="text-center text-xl bg-white p-0 flex justify-center items-center">
+          <SwiperSlide key={card.id} className="text-center  text-xl bg-white p-0 flex justify-center items-center">
             <div
               ref={(el) => coverRefs.current[index] = el}
               className="relative overflow-hidden w-full group"
             >
               <Image
-                className="rounded-3 transition-transform duration-300 ease-in-out  h-[40vh]"
+                className="rounded-3   transition-transform duration-300 ease-in-out  h-[40vh]"
                 src={card.src}
                 alt={card.alt}
                 width={500}

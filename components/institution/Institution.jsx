@@ -38,7 +38,7 @@ function Institution() {
   }, []);
 
   return (
-    <div className="relative flex items-end justify-center h-screen w-[30vw] my-[35vh] mx-[15vw] flex-col text-right">
+    <div className="relative flex items-end justify-center   w-[30vw] my-[35vh] mx-[15vw] flex-col text-right">
       <div className="relative flex items-end justify-center h-screen w-full flex-col text-right" ref={contentRef}>
         <h1 className="relative font-bold text-[50px] text-[rgba(0,0,255,0.827)] font-[Bigilla] after:content-[''] after:absolute after:left-[-60%] after:top-[-140%] after:bg-cover after:w-[50px] after:h-[50px]" ref={contentInnerBoldRef}>
           <div>حول المؤسسة</div>
