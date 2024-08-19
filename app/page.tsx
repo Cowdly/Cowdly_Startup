@@ -5,6 +5,7 @@ import Content from "../components/institution/Content";
 import Team from "../components/team/team";
 import Hero from "../components/header/Hero";
 import Blog from "../components/blog/Blog";
+import ContactUs from "../components/ContactUs";
 export default function Home() {
   return (
     <main className="overflow-hidden">
@@ -13,6 +14,7 @@ export default function Home() {
       <Project />
       <Team />
       <Blog />
+      <ContactUs />
     </main>
   );
 }
