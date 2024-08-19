@@ -1,8 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Orbitron:wght@400..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -18,9 +18,10 @@
   }
 }
 
-body {
-  font-family: "Tajawal", sans-serif;
-}
+
+/* body {
+  font-family: "Tajawal";
+} */
 
 @layer utilities {
   .text-balance {
@@ -39,23 +40,24 @@ body {
 .box3 {
   background: url(./images/Mask\ group\ \(1\).svg) no-repeat 50% 50%;
   background-size: cover;
-
 }
 
 .group {
   background: url(../app/images/Group\ 143725869.svg) no-repeat 50% 50%;
 }
+
 .backgroundImage {
   background: url(../app/images/Group\ 1000005860.svg) no-repeat 50% 50%;
 }
- 
 
 .rectangle {
   background: url(../app/images/Rectangle\ 21832-1.svg) no-repeat 50% 50%;
 }
+
 .card:hover .text {
   transform: translateY(0);
 }
+
 .slider {
   width: 100%;
   position: relative;
