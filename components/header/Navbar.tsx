@@ -19,8 +19,7 @@ export default function Navbar() {
       <div className="flex items-center justify-between w-full max-w-screen-lg mx-auto">
         <a
           className="inline-flex items-center justify-center rounded-full w-[55px] h-[55px] border-gray-400 border-4 bg-[#5665AE] px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus:outline-none"
-          href=""
-        >
+          href="">
           <FaArrowLeft />
         </a>
         <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
@@ -28,8 +27,7 @@ export default function Navbar() {
             <a
               key={link.name}
               className="mx-3 text-sm font-medium text-gray-900 hover:text-gray-700"
-              href={link.href}
-            >
+              href={link.href}>
               {link.name}
             </a>
           ))}
