@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import Image from "next/image";
 import { FaArrowLeft } from "react-icons/fa";
 import { gsap } from "gsap";
-import NavLogo from "../public/sahl-logo - Copy-2 1.svg";
+import NavLogo from "../app/images/NavLogo.svg";
 
 export default function Navbar() {
   useEffect(() => {
