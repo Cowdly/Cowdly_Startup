@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
-import { gsap,Power3 } from 'gsap';
+import { gsap, Power3 } from 'gsap';
 import style from "./project.module.css";
 import Slider from "./sliderProject";
 
 const Project = () => {
-  let t1=new gsap.timeline()
+  let t1 = new gsap.timeline()
   let ease = Power3.easeOut()
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const Project = () => {
       { opacity: 0, y: -100 },
       { opacity: 1, y: 0, duration: 1 }
     );
-  
+
   }, []);
 
   return (
@@ -27,7 +27,7 @@ const Project = () => {
           <div className={style.line2}></div>
         </h1>
         <div className="slider-container">
-          <Slider timeline={t1} ease={ease}/>
+          <Slider timeline={t1} ease={ease} />
         </div>
       </div>
     </div>

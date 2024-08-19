@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 const tajawal = Tajawal({
   weight: "400",
-  subsets: ["latin"],
+  subsets: ["arabic", "latin"],
   variable: "--font-tajawal",
 });
 const orbitron = Orbitron({

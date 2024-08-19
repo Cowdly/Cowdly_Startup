@@ -44,6 +44,7 @@ const Footer = () => {
             alt="footer"
           />
         </div>
+
         <div className="max-w-screen-xl  py-16 mx-auto relative z-50 ">
           <div className="grid grid-cols-1 gap-20 lg:grid-cols-12 items-end">
             <div className="lg:col-span-6 ">
