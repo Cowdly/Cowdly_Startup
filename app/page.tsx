@@ -8,7 +8,7 @@ import Blog from "../components/blog/Blog";
 import ContactUs from "../components/ContactUs";
 export default function Home() {
   return (
-    <main className="overflow-hidden">
+    <main className="overflow-hidden ">
       <Hero />
       <Content />
       <Project />
