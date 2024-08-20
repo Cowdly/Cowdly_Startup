@@ -2,8 +2,32 @@ import Image from "next/image";
 import React from "react";
 import HeroGround from "../../app/images/bg.svg";
 import HeroImage from "../../app/images/IMG.svg";
+import UnderHero from "../../app/images/image 182.svg";
 
 export default function Hero() {
+  const Imges = [
+    {
+      id: 1,
+      src: UnderHero,
+    },
+    {
+      id: 2,
+      src: UnderHero,
+    },
+
+    {
+      id: 3,
+      src: UnderHero,
+    },
+    {
+      id: 4,
+      src: UnderHero,
+    },
+    {
+      id: 5,
+      src: UnderHero,
+    },
+  ];
   return (
     <div className="Tajawal relative h-screen w-full">
       <Image
@@ -16,12 +40,12 @@ export default function Hero() {
           <div className="hidden sm:block sm:w-full lg:w-3/5 relative pt-[115px]">
             <Image
               src={HeroImage}
-              className="max-w-xs md:max-w-[37rem] w-full float-right mt-8"
+              className="max-w-xs md:max-w-[37rem] w-full float-right mt-8 h-full"
               alt="hero"
             />
           </div>
 
-          <div className="sm:w-[80%] lg:w-[856px] sm:h-[80vh] lg:h-[90vh] flex flex-col relative z-20 bg-black bg-opacity-80 pt-[145px] pr-[100px] pl-[55px]">
+          <div className="sm:w-[80%] lg:w-[856px] sm:h-[80vh] lg:h-[100vh] flex flex-col relative z-20 bg-black bg-opacity-80 pt-[145px] pr-[100px] pl-[55px]">
             <h1 className="pl-[18px]  pt-10 pb-8 tajawal text-end font-bold sm:text-[70px] text-[95px] flex flex-col leading-[81px] tracking-wide dark:text-white text-gray-800">
               هيا نصنع البرمجيات معا
             </h1>
@@ -45,26 +69,20 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className=" bg-white shadow-lg shadow-gray-700/5 mb-7 w-full">
-        <div className="container mx-auto grid grid-cols-5 gap-4 ">
-          <div className="...">
-            <Image src={HeroImage} alt="hero" />
-          </div>
-          <div className="...">
-            {" "}
-            <Image src={HeroImage} alt="hero" />
-          </div>
-          <div className="...">
-            {" "}
-            <Image src={HeroImage} alt="hero" />
-          </div>
-          <div className="...">
-            {" "}
-            <Image src={HeroImage} alt="hero" />
-          </div>
-          <div className="...">
-            {" "}
-            <Image src={HeroImage} alt="hero" />
+      <div className="w-full bg-white h-[20vh]">
+        <div className=" bg-white shadow-lg shadow-gray-700/10 mb-7 w-[80%] mx-auto py-5 rounded-3xl  ">
+          <div className="w-[80%] mx-auto grid grid-cols-5 gap-4 ">
+            {Imges.map((image) => (
+              <div
+                key={image.id}
+                className="col-span-5 sm:col-span-10 lg:col-span-1 w-[70%]">
+                <Image
+                  src={image.src}
+                  className="w-full h-full object-cover"
+                  alt="hero"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
