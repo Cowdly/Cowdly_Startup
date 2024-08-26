@@ -8,6 +8,8 @@ import logo from "../../app/images/Group (1).svg";
 export default function Navbar() {
   const Navlinks = [
     { name: "اتصل بنا", href: "#" },
+    { name: "المدونه", href: "#" },
+    { name: "المكودين", href: "#" },
     { name: "اعمالنا", href: "#" },
     { name: "خدماتنا", href: "#" },
     { name: "حولنا", href: "#" },
@@ -15,34 +17,38 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 w-full h-[90px] px-6 flex items-center justify-between bg-white border-b border-gray-100 shadow-md backdrop-blur-lg">
-      <div className="flex items-center justify-between w-full max-w-screen-lg mx-auto">
-        <a
-          className="inline-flex items-center justify-center rounded-full w-[55px] h-[55px] border-gray-400 border-4 bg-[#5665AE] px-3 py-2 text-sm font-semibold text-white shadow-sm transition-all duration-150 hover:bg-blue-500 focus:outline-none"
-          href="">
-          <FaArrowLeft />
-        </a>
-        <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
-          {Navlinks.map((link) => (
-            <a
-              key={link.name}
-              className="mx-3 text-sm font-medium text-gray-900 hover:text-gray-700"
-              href={link.href}>
-              {link.name}
+    <header className="xl:container m-auto fixed inset-x-0 top-0 z-30 mx-auto  max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-xl">
+      <div className="px-4">
+        <div className="flex items-center justify-between">
+          <div className="flex shrink-0">
+            <a aria-current="page" className="flex items-center" href="/">
+              <button className=" text-[20px]  w-[55px] h-[55px]  text-white hover:text-gray-400 bg-[#5665AE] hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-[50px] text-sm px-5 py-2.5 text-center ">
+                <FaArrowLeft />
+              </button>
+
+              <p className="sr-only">Website Title</p>
             </a>
-          ))}
+          </div>
+          <div className="hidden md:flex md:items-center md:justify-center md:gap-5">
+            {Navlinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-semibold leading-6 text-gray-900">
+                {link.name}
+              </a>
+            ))}
+          </div>
+          <div className=" flex items-center justify-end gap-3">
+            <Image
+              className="h-[9vh] absolute"
+              src="/logo.svg"
+              width={100}
+              height={100}
+              alt=""
+            />
+          </div>
         </div>
-        <a aria-current="page" className="flex items-center" href="/">
-          <Image
-            className="h-7 w-auto"
-            src={logo}
-            alt="logo"
-            width={100}
-            height={100}
-            loading="lazy"
-          />
-          <p className="sr-only">Website Title</p>
-        </a>
       </div>
     </header>
   );
