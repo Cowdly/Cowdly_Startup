@@ -1,11 +1,11 @@
- import Institution from './Institution';
+import Institution from './Institution';
 import Images from './Images';
- function Content() {
- 
+function Content() {
+
     return (
-        <div className="flex items-center justify-between w-screen overflow-hidden h-[100vh] flex-row">
-            <Institution  />
-            <Images   />
+        <div className="mt-16">
+            <Institution />
+            <Images />
         </div>
     );
 }

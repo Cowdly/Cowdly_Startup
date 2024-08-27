@@ -13,10 +13,10 @@ const Blog = () => {
 
     return (
         <div
-            className="relative z-30 p-5 bg-[#f5f5f5b3] mx-auto"
+            className="xl:container mx-auto relative z-30 p-5"
             id="blog"
         >
-            <h1 className="header p-3 mb-3 text-4xl font-bold text-blue-500 text-end">
+            <h1 className=" p-3 mb-3 text-[58px] font-medium text-blue-500 text-end">
                 المحتوي المميز
             </h1>
             <div className="relative z-50 flex mb-3 mt-3 items-center justify-center">

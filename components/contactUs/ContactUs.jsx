@@ -1,9 +1,10 @@
 "use client";
 import React from 'react'
 import Image from 'next/image';
-import { CgArrowLongUp } from "react-icons/cg";
-import UPphoto from "@/public/Group 143725869.svg";
-import Dowenphoto from "@/public/Group.svg";
+// import { CgArrowLongUp } from "react-icons/cg";
+import UPphoto from "../../public/Group 143725869.svg";
+import Dowenphoto from "../../public/Group.svg";
+import { HiOutlineArrowRight } from "react-icons/hi";
 
 export default function ContactUs() {
 
@@ -20,9 +21,9 @@ export default function ContactUs() {
     }
 
     return (
-        <div className="grid grid-cols-12 items-center mt-24 max-w-6xl max-lg:max-w-3xl mx-auto rounded-lg orbitron">
+        <div className="xl:container mx-auto grid grid-cols-12 items-center mt-24 max-w-6xl max-lg:max-w-3xl rounded-lg orbitron">
             <div className="lg:col-span-9 col-span-12 w-full items-center gap-14 sm:p-8 p-4 font-sans">
-                <div className="p-6 rounded-lg">
+                <div className="">
                     <h1 className="text-3xl text-[#5665AE] text-[28px] lg:text-[58px] font-semibold leading-[42px] lg:leading-[58px] pb-5">Contact Us!</h1>
                     <p className="text-sm font-semibold text-gray-800 mb-5">What can we do for you?</p>
 
@@ -42,7 +43,7 @@ export default function ContactUs() {
                         </div>
                         <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
                             <button type="button" className="flex items-center justify-center text-sm w-32 h-12 rounded-full bg-[#5665AE] text-white">
-                                <CgArrowLongUp className="rotate-[75deg] text-3xl" />
+                                <HiOutlineArrowRight className=" text-3xl" />
                             </button>
                             <div className="hidden lg:block">
                                 <Image src={Dowenphoto} alt="contact" width={140} height={200} />

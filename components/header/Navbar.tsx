@@ -17,7 +17,7 @@ export default function Navbar() {
   ];
 
   return (
-    <header className="xl:container m-auto fixed inset-x-0 top-0 z-30 mx-auto  max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-xl">
+    <header className="xl:container m-auto fixed inset-x-0 top-0 z-50 mx-auto  max-w-screen-md border border-gray-100 bg-white/80 py-3 shadow backdrop-blur-lg md:top-6 md:rounded-3xl lg:max-w-screen-xl">
       <div className="px-4">
         <div className="flex items-center justify-between">
           <div className="flex shrink-0">
