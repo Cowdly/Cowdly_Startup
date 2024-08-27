@@ -1,22 +1,23 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Autoplay } from 'swiper/modules';
+import 'swiper/css/pagination';
+import 'swiper/css';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination, Autoplay } from 'swiper/modules';
 import Image from 'next/image';
 import { ArrowRight } from '@phosphor-icons/react';
+import { FaArrowLeft } from "react-icons/fa6";
 import cover1 from '../../app/images/Projects 21838.svg';
 
 
 const cardData = [
-  { id: 1, src: cover1, alt: 'Cover 1', text: 'VR training App for a manufacturing company' },
-  { id: 2, src: cover1, alt: 'Cover 2', text: 'VR training App for a manufacturing company' },
-  { id: 3, src: cover1, alt: 'Cover 3', text: 'VR training App for a manufacturing company' },
-  { id: 4, src: cover1, alt: 'Cover 4', text: 'VR training App for a manufacturing company' },
-  { id: 5, src: cover1, alt: 'Cover 5', text: 'VR training App for a manufacturing company' },
-  { id: 6, src: cover1, alt: 'Cover 6', text: 'VR training App for a manufacturing company' },
+  { id: 1, src: cover1, alt: 'Cover 1', text: 'مشروع اول قوي متجر الكتروني شيق' },
+  { id: 2, src: cover1, alt: 'Cover 2', text: 'مشروع اول قوي متجر الكتروني شيق' },
+  { id: 3, src: cover1, alt: 'Cover 3', text: 'مشروع اول قوي متجر الكتروني شيق' },
+  { id: 4, src: cover1, alt: 'Cover 4', text: 'مشروع اول قوي متجر الكتروني شيق' },
+  { id: 5, src: cover1, alt: 'Cover 5', text: 'مشروع اول قوي متجر الكتروني شيق' },
+  { id: 6, src: cover1, alt: 'Cover 6', text: 'مشروع اول قوي متجر الكتروني شيق' },
 ];
 
 const Slider = ({ timeline, ease }) => {
@@ -62,35 +63,53 @@ const Slider = ({ timeline, ease }) => {
   }, [animateSlides]);
 
   return (
-    <div className="swiper-container w-full   relative">
+    <div className="xl:container mx-auto swiper-container w-full   relative">
       <Swiper
         slidesPerView={4}
-        spaceBetween={10}
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 5000, disableOnInteraction: false }}
-        modules={[Pagination, Autoplay]}
-        className='w-full h-[55vh]  grid grid-cols-4 gap-2'
+        centeredSlides={true}
+        spaceBetween={30}
+        grabCursor={true}
+        pagination={{
+          clickable: true,
+        }}
+        // modules={[Pagination]}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false
+        }}
+        className="mySwiper"
+
       >
+
         {cardData.map((card, index) => (
-          <SwiperSlide key={card.id} className="text-center  text-xl bg-white p-0 flex justify-center items-center h-[55vh]">
+          <SwiperSlide
+            className="w-[20%] text-[24px] transform translate-x-[131.25px] translate-y-0 translate-z-0"
+            key={card.id}>
             <div
               ref={(el) => coverRefs.current[index] = el}
-              className="h-[55vh] relative overflow-hidden w-full group"
-            >
-              <Image
-                className="rounded-3   transition-transform duration-300 ease-in-out  h-full w-full object-cover"
-                src={card.src}
-                alt={card.alt}
-                width={500}
-                height={500}
+              class=" relative flex w-full max-w-xs flex-col  rounded-lg border border-gray-100 bg-white shadow-md">
+              <div class=" flex h-[20rem] " href="#">
+                <Image class="object-cover" src={card.src} alt={card.alt} />
+                <div className='absolute top-0 left-0 m-2 flex gap-2  '>
+                  <span class=" rounded-sm bg-white px-2 text-center text-sm font-medium text-black">2D</span>
+                  <span class=" rounded-sm bg-white px-2 text-center text-sm font-medium text-black">AR/VR/MR</span>
+                  <span class=" rounded-sm bg-white px-2 text-center text-sm font-medium text-black">3D</span>
+                </div>
+              </div>
+              <div
+                style={{
 
-                loading='lazy'
-              />
-              <div className="absolute inset-0 bottom-0 bg-black bg-opacity-50 flex flex-col rounded-2xl items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100">
-                <p className="absolute bottom-0 h-[40%] bg-black bg-opacity-87 text-white text-xl px-12 py-2.5 w-full translate-y-full transition-transform duration-300 transform group-hover:translate-y-0">
-                  {card.text}
-                  <ArrowRight className="bg-[#011b3d] rounded-full my-5" size={40} weight="bold" />
-                </p>
+                  boxShadow: "-50px -56px 121px 6px #fbf9f9;"
+                }}
+                class="bg-white  pt-4 px-5 pb-5 hover:bg-[#3F3F3F] hover:text-white transition-all ">
+                <div>
+                  <p class=" text-right  tracking-tight ">{card.text}</p>
+                </div>
+                <div className='flex justify-end mt-4'>
+                  <button href="#" class="p-2 flex items-center justify-center rounded-full bg-slate-900  text-center text-sm font-medium text-white hover:bg-[#615AA6] focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    <FaArrowLeft className="   rounded-full " size={25} weight="bold" />
+                  </button>
+                </div>
               </div>
             </div>
           </SwiperSlide>
@@ -99,5 +118,9 @@ const Slider = ({ timeline, ease }) => {
     </div>
   );
 };
+
+
+
+
 
 export default Slider;

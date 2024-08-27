@@ -1,16 +1,16 @@
 "use client";
 import React from "react";
 import Project from "../components/project/project";
-import Content from "../components/institution/Content";
+import Institution from "../components/institution/Institution";
 import Team from "../components/team/team";
 import Hero from "../components/header/Hero";
 import Blog from "../components/blog/Blog";
-import ContactUs from "../components/ContactUs";
+import ContactUs from "../components/contactUs/ContactUs";
 export default function Home() {
   return (
     <main className="overflow-hidden ">
       <Hero />
-      <Content />
+      <Institution />
       <Project />
       <Team />
       <Blog />
