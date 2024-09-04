@@ -183,7 +183,7 @@ function QuestionnaireForm() {
                         />
                         <select id="countries" class="text-end w-full bg-gray-100 font-medium  text-gray-400 mt-2  rounded-lg focus:outline-none focus:shadow-outline   text-sm  focus:ring-blue-500 focus:border-blue-500 block  p-3   dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         >
-                            <option selected>عدد الصفحات المطلوبه</option>
+                            <option selected> عدد الصفحات المطلوبه</option>
                             <option value="web">1</option>
                             <option value="app">2</option>
                         </select>
