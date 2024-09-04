@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import FooterImage from "@/public/Frame.svg";
-import Cowdly from "@/public/Vector.svg";
+import FooterImage from "../../public/Frame.svg";
+import Cowdly from "../../public/Vector.svg";
 const Footer = () => {
   const FooterLinks = [
     {
@@ -37,7 +37,7 @@ const Footer = () => {
   return (
     <>
       <footer className="overflow-hidden bg-no-repeat bg-cover bg-center bg-gradient-to-r from-[#5665AE] to-[#615AA6] text-white tajawal w-full h-[440px] relative">
-        <div className="w-[82%] absolute top-[33%] left-[44%] transform -translate-x-1/2 -translate-y-1/2">
+        <div className="w-[82%] sm:absolute top-[25%] left-[44%] sm:block hidden transform -translate-x-1/2 -translate-y-1/2">
           <Image
             src={FooterImage}
             className="w-[100%] h-[100%] opacity-35  z-[-1]"
@@ -46,11 +46,12 @@ const Footer = () => {
         </div>
 
         <div className="max-w-screen-xl  py-16 mx-auto relative z-50 ">
-          <div className="grid grid-cols-1 gap-20 lg:grid-cols-12 items-end">
-            <div className="lg:col-span-6 ">
-              <ul className="float-right grid lg:grid-cols-6  gap-x-4  sm:grid-cols-2 sm:gap-y-6 lg:col-span-2 sm:col-span-2  text-white text-[14px] font-bold leading-[42px ] tracking-widest	">
+          <div className="grid grid-cols-12 gap-20 lg:grid-cols-12  items-end">
+
+            <div className="lg:col-span-7 md:col-span-5 grid grid-col-12 col-span-8  ">
+              <ul className=" col-span-12 grid-cols-12 float-right grid lg:grid-cols-12 xl:gap-x-8 lg:gap-x-3  md:gap-x-[0.7rem]  sm:grid-cols-4 sm:gap-y-6 lg:col-span-2 sm:col-span-2  text-white text-[14px] font-bold leading-[42px ] tracking-widest	">
                 {FooterLinks.map((link) => (
-                  <li className="text-end" key={link.name}>
+                  <li className="text-left col-span-2 " key={link.name}>
                     <a
                       className="hover:opacity-75"
                       href={link.href}
@@ -61,6 +62,7 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
+
               <div className="float-right flex mt-8 space-x-6 text-white items-center text-[20px]">
                 <a
                   className="hover:opacity-75"
@@ -115,7 +117,9 @@ const Footer = () => {
                 <h4 className="text-white text-[40px] font-bold ">تابعنا</h4>
               </div>
             </div>
-            <div className="lg:col-span-6 w-full ">
+
+
+            <div className="lg:col-span-5 w-full md:col-span-5  col-span-5   ">
               <Image
                 src={Cowdly}
                 className="mr-5 float-right w-[175.53px] h-[92px]"
@@ -130,6 +134,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
+
+
       </footer>
     </>
   );

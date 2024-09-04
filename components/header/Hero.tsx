@@ -36,7 +36,7 @@ export default function Hero() {
         alt="hero"
       />
       <div className=" xl:container mx-auto flex relative z-20 items-center overflow-hidden">
-        <div className=" mr-0 flex relative 2xl:h-[90vh] xl:h-[90vh] lg:h-[62vh] md:h-[45vh] ">
+        <div className=" mr-0 flex relative 2xl:h-[100vh] xl:h-[90vh] lg:h-[70vh] md:h-[52vh] ">
           <div className="hidden sm:block sm:w-full xl:w-3/5 xl:h-full lg:w-[60%] lg:h-[70vh] relative pt-[115px] ">
             <Image
               src={HeroImage}
@@ -69,7 +69,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      <div className="">
+      <div className="sm:block hidden ">
         <div className="w-[80%] mx-auto flex justify-around ">
           {Imges.map((image) => (
             <div
