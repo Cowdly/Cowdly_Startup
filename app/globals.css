@@ -78,9 +78,10 @@
   align-items: center;
 }
 
-.swiper-wrapper {
-  /* transform: translate3d(0px, 0px, 0px) !important; */
-}
+
+/* .swiper-wrapper {
+    transform: translate3d(-753.75px, 0px, 0px) !important;
+} */
 
 .swiper-slide {
   /* width: 335.5px !important;    */

@@ -1,5 +1,5 @@
-import Footer from "../components/footer/Footer";
 import Navbar from "../components/header/Navbar";
+import Footer from "../components/footer/Footer";
 import "./globals.css";
 import { Tajawal, Orbitron } from "next/font/google";
 
@@ -29,6 +29,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+
       </body>
     </html>
   );

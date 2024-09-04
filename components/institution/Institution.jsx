@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import Link from 'next/link';
 
 function Institution() {
   const contentRef = useRef(null);
@@ -38,10 +39,15 @@ function Institution() {
   // }, []);
 
   return (
-    <section class="Tajawal pt-10 overflow-hidden bg-gray-50 md:pt-[100px] md:pb-[100px] sm:pt-16 2xl:pt-28">
+    <section class="Tajawal mt-10 overflow-hidden md:pt-[100px] md:pb-[100px] sm:pt-16 2xl:pt-28">
       <div class="xl:container  mx-auto  ">
         <div class="grid items-center grid-cols-1 md:grid-cols-2">
-          <div className='w-[90%]'>
+
+          <div class="relative">
+            <img class="relative w-full xl:max-w-[40rem] 2xl:origin-bottom 2xl:scale-110" src="/About.svg" alt="" />
+          </div>
+
+          <div className='w-[85%] m-auto text-right '>
             <h2 class="text-[58px]  font-medium text-right leading-[42px] text-[#5665AE] sm:text-4xl lg:text-5xl">
               حول المؤسسة
             </h2>
@@ -50,9 +56,9 @@ function Institution() {
               وتطبيقات الهواتف الذكية باستخدام آخر التقنيات
               وتهتم المؤسسة بشكل خاص بالتطبيقات والأنظمة التي تخدم التعليم
             </p>
-          </div>
-          <div class="relative">
-            <img class="relative w-full xl:max-w-[40rem] 2xl:origin-bottom 2xl:scale-110" src="/About.svg" alt="" />
+            <div className="flex justify-end ">
+              <Link href="/aboutUs" class="mt-8 cursor-pointer py-3 px-8 w-60 bg-indigo-600 text-white text-base font-semibold transition-all duration-500 block text-center rounded-full hover:bg-indigo-700 mx-auto lg:mx-0">حول المؤسسه</Link>
+            </div>
           </div>
         </div>
       </div>
